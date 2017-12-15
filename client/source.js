@@ -1,16 +1,6 @@
 const address = '127.0.0.1';
 const port = 10001;
 
-function reqCallback(response) {
-    let str = '';
-
-    response.on('data', (chunk) => {
-        str += chunk;
-    }).on('end', () => {
-        console.log(str);
-    });
-}
-
 function sendRequest(position) {
     const { latitude, longitude } = position.coords;
     const latlng = {latitude, longitude};
